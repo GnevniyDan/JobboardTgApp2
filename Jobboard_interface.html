@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board TGMiniApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <button id="publishJob" class="red-button" style="display: none;">Опубликовать вакансию</button>
+        <button id="findJob" class="red-button">Найти работу</button>
+        <div id="addJobForm" class="add-job-form" style="display:none;">
+            <input type="text" id="jobTitle" placeholder="Название вакансии">
+            <textarea id="jobDescription" placeholder="Описание вакансии"></textarea>
+            <input type="text" id="jobLink" placeholder="Ссылка на вакансию">
+            <button id="submitJob" class="red-button">Добавить вакансию</button>
+        </div>
+        <div id="jobCards" class="job-cards">
+            <!-- Карточки вакансий будут динамически добавляться здесь -->
+        </div>
+    </div>
+    <button id="loginButton" class="login-button">Войти</button>
+</body>
+</html>
