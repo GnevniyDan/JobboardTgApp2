@@ -2,8 +2,8 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 import os
 
-API_TOKEN = os.getenv('API_TOKEN')
-WEB_APP_URL = os.getenv('WEB_APP_URL')
+API_TOKEN = '7345731768:AAG3o5Ay_i5etdxoMq6cWNgOdTWBqsIAZEQ'
+WEB_APP_URL = 'https://web-production-5315e.up.railway.app/jobboard_interface.html'
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
