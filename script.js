@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     let isAuthorized = localStorage.getItem('isAuthorized') === 'true';
-    const BASE_URL = 'http://127.0.0.1:5000'; // Замените на нужный URL
+    const BASE_URL = 'https://web-production-5315e.up.railway.app'; // Замените на нужный URL
     const AUTH_TOKEN = '123'; // Токен авторизации
 
     // Проверка доступности объекта Telegram, чтобы избежать ошибки
