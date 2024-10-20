@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Board TGMiniApp</title>
+    <title>Job Board Web App</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -16,6 +15,24 @@
             <input type="text" id="jobTitle" placeholder="Название вакансии">
             <textarea id="jobDescription" placeholder="Описание вакансии"></textarea>
             <input type="text" id="jobLink" placeholder="Ссылка на вакансию">
+            
+            <!-- Выпадающий список для уровня позиции -->
+            <label for="jobLevel">Уровень позиции:</label>
+            <select id="jobLevel">
+                <option value="Junior">Junior</option>
+                <option value="Middle">Middle</option>
+                <option value="Senior">Senior</option>
+            </select>
+
+            <!-- Выпадающий список для формата работы -->
+            <label for="jobType">Тип работы:</label>
+            <select id="jobType">
+                <option value="Remote">Remote</option>
+                <option value="Office">Office</option>
+                <option value="Hybrid">Hybrid</option>
+            </select>
+
+            <input type="file" id="jobLogo" accept="image/*" placeholder="Загрузить логотип компании">
             <button id="submitJob" class="red-button">Добавить вакансию</button>
         </div>
         <div id="jobCards" class="job-cards">
