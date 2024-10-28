@@ -8,7 +8,7 @@ CORS(app)
 UPLOAD_FOLDER = 'static/logos'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Database setup
+# Настройка базы данных
 def init_db():
     conn = sqlite3.connect('jobs.db')
     cursor = conn.cursor()
@@ -28,12 +28,12 @@ def init_db():
 
 init_db()
 
-# Redirect root to jobboard interface
+# Перенаправление root на jobboard interface
 @app.route('/')
 def redirect_to_interface():
     return redirect('/jobboard_interface.html', code=302)
 
-# Endpoint to get all job listings
+# Эндпоинт для получения всех объявлений о работе
 @app.route('/api/jobs', methods=['GET'])
 def get_jobs():
     conn = sqlite3.connect('jobs.db')
@@ -54,8 +54,7 @@ def get_jobs():
     ]
     return jsonify(jobs)
 
-# Endpoint to add a new job listing
-@app.route('/api/jobs', methods=['POST'])
+# Эндпоинт для добавления нового объявления о работе@app.route('/api/jobs', methods=['POST'])
 def add_job():
     title = request.form.get('title')
     description = request.form.get('description')
@@ -88,7 +87,7 @@ def add_job():
     }
     return jsonify(new_job), 201
 
-# Endpoint to get a specific job by id
+# Эндпоинт для получения конкретного задания по идентификатору
 @app.route('/api/jobs/<int:job_id>', methods=['GET'])
 def get_job(job_id):
     conn = sqlite3.connect('jobs.db')
@@ -109,7 +108,7 @@ def get_job(job_id):
     }
     return jsonify(job)
 
-# Endpoint to delete a job listing
+# Эндпоинт для удаления объявления о работе
 @app.route('/api/jobs/<int:job_id>', methods=['DELETE'])
 def delete_job(job_id):
     conn = sqlite3.connect('jobs.db')
@@ -119,7 +118,7 @@ def delete_job(job_id):
     conn.close()
     return jsonify({'message': 'Job deleted'}), 200
 
-# Endpoint to serve logo files
+# Эндпоинт для обслуживания файлов логотипов
 @app.route('/logos/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
