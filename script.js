@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('loginButton').textContent = 'Войти';
     }
 
-    // Add test jobs when the "findJob" button is clicked
+    // Добавление вакансий при нажатии кнопки «findJob».
     document.getElementById('findJob').addEventListener('click', function() {
         console.log("Button 'Find Job' clicked"); // Лог перед запросом
         document.getElementById('findJob').style.display = 'none'; // Скрываем кнопку после нажатия
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 
-    // Show form to add a job
+   // Показать форму для добавления вакансии
     document.getElementById('publishJob').addEventListener('click', function() {
         if (isAuthorized) {
             document.getElementById('addJobForm').style.display = 'block';
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Submit new job
+    // Отправить новую вакансию
     document.getElementById('submitJob').addEventListener('click', function() {
         const jobTitle = document.getElementById('jobTitle').value;
         const jobDescription = document.getElementById('jobDescription').value;
@@ -192,11 +192,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Login and logout functionality
+    // Функции входа и выхода из системы
     document.getElementById('loginButton').style.display = 'inline-block';
     document.getElementById('loginButton').addEventListener('click', function() {
         if (isAuthorized) {
-            // Logout
+            // Выход
             isAuthorized = false;
             localStorage.setItem('isAuthorized', 'false');
             document.getElementById('publishJob').style.display = 'none';
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Вы вышли из системы.');
             location.reload();
         } else {
-            // Login
+            // Вход
             const password = prompt('Введите ключ-пароль для авторизации:');
             if (password === AUTH_TOKEN) { // Используем токен авторизации
                 isAuthorized = true;
